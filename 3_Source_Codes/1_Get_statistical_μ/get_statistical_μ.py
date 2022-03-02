@@ -781,9 +781,12 @@ def main():
     iterations = 150      # Need to be tuned to optimise computation
     cpus = 28             # Need to be tuned to optimise computation
     completion_target = 100.0
-    debug = False         # Set to True for debug perpuses
+    debug = False         # Set to True for debug purposes
+    # Define covid19_csvfile path
+    repo_dir = Path(__file__).resolve().parents[2]
+    covid_data = repo_dir / '4_Empirical_Data' / covid19_csvfile
     # Initialize Data and variables
-    predict = initialize(covid19_csvfile, mu_min, mu_max, sigma_a, sigma_b,
+    predict = initialize(covid_data, mu_min, mu_max, sigma_a, sigma_b,
                          earliest_arrival_date_of_imported_cases)
     # Start esimation
     predict.start(seed=seed, cpus=cpus, iterations=iterations, quota=300,
