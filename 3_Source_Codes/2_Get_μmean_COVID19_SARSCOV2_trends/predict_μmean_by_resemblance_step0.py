@@ -1010,15 +1010,15 @@ class Predict_SARSCOV2_COVID19_VIA_CPTPP():
 
 
 if __name__ == "__main__":
-    # Source files with predicted mus
-    cwd = Path(__file__).parent
-    source1 = cwd / Path('nd_predicted_mus_a1_s91023483923_pc8458.csv')
-    source2 = cwd / Path('nd_predicted_mus_a2_s66576402094_pc8458.csv')
-    source3 = cwd / Path('nd_predicted_mus_a3_s343090589475_pc8458.csv')
-    xdates, ymus_mean, _ = get_estimated_mus_mean_median(source1, source2,
-                                                         source3)
+    repo_dir = Path(__file__).resolve().parents[2]
+    # Statistical μ estimates of random seeds 1, 2, 3
+    estimates_dir = repo_dir / '2_Results' / '1_statistical_μ'
+    e1 = estimates_dir / 'nd_predicted_mus_a1_s91023483923_pc8458.csv'
+    e2 = estimates_dir / 'nd_predicted_mus_a2_s66576402094_pc8458.csv'
+    e3 = estimates_dir / 'nd_predicted_mus_a3_s343090589475_pc8458.csv'
+    xdates, ymus_mean, _ = get_estimated_mus_mean_median(e1, e2, e3)
     # Inputs needed to predict SARS-CoV-2 and COVID-19 trends
-    covid19_csvfile = cwd / Path('COVID19_epidemic_trends.csv')
+    covid19_csvfile = 'COVID19_epidemic_trends.csv'
     mu_min_max_step = (1, 18, 1)
     sigma_constants = (-0.008665, 0.483888, 0.0)
     seed1 = 91023483923
@@ -1026,13 +1026,15 @@ if __name__ == "__main__":
     seed3 = 343090589475
     seeds = [seed1, seed2, seed3]
     labels = ['s1', 's2', 's3']
-    cpus = 28
+    cpus = 2
     c = 2
     d = 3
-    # MEAN
+    # Define covid19_csvfile path
+    covid_data = repo_dir / '4_Empirical_Data' / covid19_csvfile
+    # Perform Step0 of Modified Resemblance Algorithm for 3 random seeds
     for seed, label in zip(seeds, labels):
         analysis = Predict_SARSCOV2_COVID19_VIA_CPTPP(
-            xdates, ymus_mean, covid19_csvfile, mu_min_max_step, sigma_constants,
+            xdates, ymus_mean, covid_data, mu_min_max_step, sigma_constants,
             # debug=True,
             prefix=label)
         analysis.start(seed=seed, cpus=cpus, c=c, d=d)
