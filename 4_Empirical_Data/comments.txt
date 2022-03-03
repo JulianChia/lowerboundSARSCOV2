@@ -8,5 +8,10 @@ COVID19_epidemic_trends.csv
 - Extracted from SG's MOH Situation Report. https://www.moh.gov.sg/covid-19/testing/situation-report-pdf
 
 Remarks:
-- When we compiled these data, we noticed a few small discrepancies.
-- Hence, there were revisions/updates on the confirmed cases post confirmation.      
+- When we were compiling these data daily in 2020, we noticed discrepancies at various times.
+  There appeared to be revisions/updates on the COVID-19 confirmed case info post confirmation (e.g. in their
+  classification as local or imported cases). Some of these changes are not reflected in the above data
+  files when explanation were not found. Therefore, please note that the data in the abovementioned files
+  were collected in 2020 with best of intention and is not an exact duplicate of SG MOH latest published data.
+ 
+   
