@@ -8,7 +8,7 @@ This repository contains its:
 - manuscript in pdf format
 - manuscript's figures
 - proposed model source codes that are written in Python3.
-- source codes to plot the manuscript figures.
+- source codes to plot the manuscript figures and tables.
 - empirical data on SG's Imported and Local COVID-19 epidemic trends from 23<sup>rd</sup> January to 18<sup>th</sup> August 2020 and COVID19 Confirmed Cases Info till 27<sup>th</sup> May 2020.
 
 ## Dependencies
