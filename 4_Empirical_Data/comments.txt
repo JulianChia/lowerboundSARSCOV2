@@ -1,0 +1,12 @@
+COVID19_Confirmed_Cases_Info_till_2020_05_27.csv
+- It contains infomation of each COVID-19 case in Singapore that my son, Samuel, & I could extract daily from 
+  Singapore's Minitry of Health(MOH) - UPDATES ON SINGAPORE'S COVID-19 SITUATION daily reports
+  https://www.moh.gov.sg/covid-19 (and its Daily COVID-19 Case Portal which was obsoleted by MOH in 2020).  
+
+COVID19_epidemic_trends.csv
+- Singapore's Imported and Local COVID-19 epidemic trends from 23rd Jan 2020 to 18th Aug 2020.
+- Extracted from SG's MOH Situation Report. https://www.moh.gov.sg/covid-19/testing/situation-report-pdf
+
+Remarks:
+- When we compiled these data, we noticed a few small discrepancies.
+- Hence, there were revisions/updates on the confirmed cases post confirmation.      
