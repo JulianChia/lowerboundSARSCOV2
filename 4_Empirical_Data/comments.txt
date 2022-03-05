@@ -8,10 +8,14 @@ COVID19_epidemic_trends.csv
 - Extracted from SG's MOH Situation Report. https://www.moh.gov.sg/covid-19/testing/situation-report-pdf
 
 Remarks:
-- When we were compiling these data daily in 2020, we noticed discrepancies at various times.
-  There appeared to be revisions/updates on the COVID-19 confirmed case info post confirmation (e.g. in their
+- When compiling these data daily in 2020, a few minor discrepancies were noticed. There seemed to be a few 
+  revisions/updates made on the COVID-19 confirmed case info post COVID-19 confirmation (e.g. in their 
   classification as local or imported cases). Some of these changes are not reflected in the above data
   files when explanation were not found. Therefore, please note that the data in the abovementioned files
   were collected in 2020 with best of intention and is not an exact duplicate of SG MOH latest published data.
+- According to https://www.moh.gov.sg/docs/librariesprovider5/local-situation-report/20200818_daily_report_on_covid-19.pdf,
+  on 18th Aug 2020 the Total, Imported and Local populations are 55938, 814 and 55124. 
+  In COVID19_epidemic_trends.csv, the Total, Imported and Local populations are 55937, 801 and 55136.
+  These minor discrepancies are expected to have negligible influence on the conclusion of this paper/thesis.  
  
    
