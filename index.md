@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Singapore’s SARS-CoV-2 Infection Trend In 2020: A Lower Bound Estimate
 
 You can use the [editor on GitHub](https://github.com/JulianChia/lowerboundSARSCOV2/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
