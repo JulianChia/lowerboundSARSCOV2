@@ -13,6 +13,8 @@ SARS-CoV-2 infection trend· COVID-19 epidemic trend· COVID-19 Confirmation Per
 ## 1 Introduction
 
 Singapore reported its first two Coronavirus Disease 2019 (COVID-19) [1] cases on 23<sup>rd</sup> January 2020 [2]. This disease onset evolved from several independent sporadic outbreaks into an epidemic within that year. Publicly accessible daily COVID-19 Case Reports and Situation Reports issued by the Ministry of Health of Singapore [3] describe the extent of this epidemic. The _number of daily confirmed COVID-19 cases_ is their unit of measurement of daily COVID-19 prevalence; they are the daily cumulative positive real-time reverse transcription-polymerase chain reaction (rt-PCR) tests and serologic assays [4]. Its daily compilation constructs the Singapore COVID-19 epidemic curves [5] for Imported and Local cases.
+
+[Figure 1](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Figure_1_SG_COVID19_%20Epidemic_trends.png)
   
 Figure 1 illustrates these Imported and Local COVID-19 epidemic trends of Singapore (from 23<sup>rd</sup> January to 18<sup>th</sup> August 2020). It evidences the pervasiveness of the COVID-19 epidemic in Singapore that caused the implementation of a nationwide Circuit Breaker (CB), alternatively known as a Lockdown, that year. Although these trend curves are informative, they do not describe the events that caused COVID-19, i.e. they do not show when Severe Acute Respiratory Syndrome Coronavirus 2 (SARS-CoV-2) infection had occurred. The SARS-CoV-2 infection trend curve fulfils this function, yet it is unreported. A means to monitor SARS-CoV-2 transmission in real-time is unavailable. Also, COVID-19 patients could not see and did not know when they had contracted SARS-CoV-2.
   
@@ -28,10 +30,12 @@ The following sections present a model that utilises the abovementioned postulat
 
 The primary assumptions of the model are:
 
-i. Local SARS-CoV-2 infections that are presymptomatic, asymptomatic or symptomatic but are undocumented are negligible. Therefore, an empirical Local COVID-19 epidemic trend is a reasonable lower-bound estimate of the Local COVID-19 epidemic trend and is relatable to the lower-bound Local SARS-CoV-2 infection trend that precedes it.
-ii. The Local COVID-19 confirmation event always lags behind its Local SARS-Cov-2 infection event. The duration between these two events is called the _COVID-19 confirmation period (CCP)_. It follows the Normal/Gaussian distribution theory. Daily, the _CCP_ probability density function is:
+1. Local SARS-CoV-2 infections that are presymptomatic, asymptomatic or symptomatic but are undocumented are negligible. Therefore, an empirical Local COVID-19 epidemic trend is a reasonable lower-bound estimate of the Local COVID-19 epidemic trend and is relatable to the lower-bound Local SARS-CoV-2 infection trend that precedes it.
+
+2. The Local COVID-19 confirmation event always lags behind its Local SARS-Cov-2 infection event. The duration between these two events is called the _COVID-19 confirmation period (CCP)_. It follows the Normal/Gaussian distribution theory. Daily, the _CCP_ probability density function is:
                              (1)
-Here, _X є_ (-_∞_,_∞_) is the random variate of Eqn(1) and denotes the daily CCP, _μ_ denotes its daily mean, _σ_ denotes its daily standard deviation, and _π_ denotes the pi constant. _μ_ is not constant over the Local COVID-19 population history, i.e. _μ_ is a function of days.
+			     
+ Here, _X є_ (-_∞_,_∞_) is the random variate of Eqn(1) and denotes the daily CCP, _μ_ denotes its daily mean, _σ_ denotes its daily standard deviation, and _π_ denotes the pi constant. _μ_ is not constant over the Local COVID-19 population history, i.e. _μ_ is a function of days.
 
 ### 2.1 Assumptions
 ### 2.2 Hypothesis
