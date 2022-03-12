@@ -91,7 +91,22 @@ A strategy to achieve high computation efficacy is executing an instance of the 
 The generation of pseudo-randomness in the results are by the NumPy Permuted Congruential Generator 64-bit with DXSM (_PCG64DXSM_) class and the NumPy _random.SeedSequence_ class. Also, three unique random seeds had primed the _random.SeedSequence_ class, and thus the _PCG64DXSM_ bit generator, to understand possible variance in their computed results.
 	
 ## 3 Results
+
 ### 3.1 The Statistical μ Estimates
+
+![Figure 3](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Figure_3_%CE%BC_computation.png?raw=true)
+**Figure 3:** Illustration of the duration and iterations to estimate _μ_. “Completed” denotes achieving a sample quota of 300 estimates per day. “Incomplete” denotes not achieving the sample quota. “No Estimate” is a subset of “Incomplete” without an estimation of _μ_.
+
+![Figure 4](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Figure_4_%CE%BC_estimates.png?raw=true)
+**Figure 4:** The mean of the respective estimates of _μ_ for Random Seeds 1, 2 and 3. μmean=0 denotes no estimate of _μ_.
+
+Figure 3 shows that the statistical estimation of _μ_ for each random seed took 14 to 15hrs or ~2.48x106 iterations to complete ~84.58% of the Local COVID-19 population history of 214 days. This result meant that 181 days of the 214 days achieved the sampling quota of 300 estimates per day. Of the remaining 15.42% (or 33 days of the 214 days) that are incomplete, 6.54-7.48% (or 14-16 days of the 214 days) achieved no estimate of _μ_. Beyond these thresholds, the statistical estimation of _μ_ became unproductive and discontinued. Figure 4 shows the mean of the estimated _μ_, i.e. _μ<sub>mean</sub>_, of each unique random seed. The low variance in these _μ<sub>mean</sub>_ trends indicates that the sampling quota of the _μ_ estimates is sufficiently large.
+
+![Figure 5](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Figure_5_%CE%BCmean_incomplete.png?raw=true)
+**Figure 5:** The mean of the combined estimates of _μ_ for Random Seeds 1, 2 and 3. _μ<sub>mean</sub>_=0 denotes no estimate of _μ_.
+
+Figure 5 shows the μmean trend of all the _μ_ estimates combined. ~85.05% of the 214 days (or 182 days) achieved the sample quota of _μ_ while ~14.95% of 214 days (or 32 days) did not. Of which, ~6.07% of the 214 days (or 13 days) had no estimates of _μ_. The completion of the _μ<sub>mean</sub>_ trend via the _Resemblance Algorithm_ is needed and presented in the next section.
+
 ### 3.2 The Estimated μ<sub>mean</sub> Trend
 ### 3.3 The Estimated Lower-bound Local COVID-19 Epidemic Trends
 ### 3.4 The Estimated Lower-bound Local SARS-CoV-2 Infection Trends
