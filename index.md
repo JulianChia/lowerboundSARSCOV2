@@ -4,7 +4,7 @@
 
 By Julian Chia, 1<sup>st</sup> March 2022
 
-_In remembrance of the 2nd Anniversary of Singapore's COVID-19 epidemic._
+_In remembrance of the 2<sup>nd</sup> Anniversary of Singapore's COVID-19 epidemic._
 
 ## Abstract
 Severe Acute Respiratory Syndrome Coronavirus 2 (SARS-CoV-2) infection causes Coronavirus Disease 2019 (COVID-19). Knowledge on the SARS-CoV-2 infection trend is, however, lacking. This viral infection is invisible to the naked eye and is challenging to profile in real-time. Its closest indication is its documented COVID-19 epidemic trend. Fortunately, that is published daily and globally due to the pandemic situation of COVID-19. Leveraging the empirical nature and availability of these COVID-19 epidemic trends, this paper posits that these trends are, in fact, lower-bound estimates of the respective localities COVID-19 epidemic situation, and each is interrelated to the lower-bound SARS-CoV-2 infection trend in their locality. A model based on this posit is developed and applied to Singapore. The predicted Local SARS-CoV-2 infection trends provided a novel reference to understanding the Singapore COVID-19 epidemic that was previously not possible. They evidenced the window of opportunity where Singapore could have mitigated its COVID-19 epidemic via its Circuit Breaker (CB) that it had missed. They evidenced Singapore's additional tighter CB measures and extended CB dateline, both implemented during the CB on 21<sup>st</sup> April 2020, were timely and effective. They derived the population of imminent COVID-19 individuals that the empirical Local COVID-19 epidemic trend had undocumented daily. These undocumented populations are sizable and a possible factor for the COVID-19 epidemic and its protracted recovery. Finally, these SARS-CoV-2 trends provided circumstantial evidence that Singapore's COVID-19 epidemic originated from COVID-19 cases imported into Singapore.
@@ -83,6 +83,13 @@ and its _weighted_ counterpart (_WCAD_) criterion:
 Here, _T<sub>e</sub>_ and _T<sub>m</sub>_, respectively, denote the estimated and documented daily number of Local COVID-19 cases, _d_ denotes the day, _d<sub>max</sub>_ denotes its maximum, and _p_ denotes the population of the empirical Local COVID-19 epidemic. A complete resemblance occurs when the criterion → 0. The opposite is true when their value → ∞.
 	
 ### 2.4 Computation
+
+The implementation of the methodology is by the Python3 scripting language [21] and optimized libraries such as NumPy [22] and SciPy [23]. The visualization of their results is through Matplotlib [24]. Their source codes are in [25]. All computations are by a workstation installed with an overclocked Intel® Core™ i9-7960X CPU comprising 32 logical cores and 94.0GB of DDR4 RAM.
+
+A strategy to achieve high computation efficacy is executing an instance of the _concurrent.futures.ProcessPoolExecutor_ class of Python3 within a nested logical _while_-loop structure. This arrangement provides a continuous-concurrent stream of computation using every available logical core of the CPU.  Also, large three-dimensional instances of the NumPy _ndarray_ class facilitated data parallelism within each CPU logical core. The 1<sup>st</sup>, 2<sup>nd</sup> and 3<sup>rd</sup> dimensions of these ndarrays, respectively, represent the number of iterations performed in each CPU logical-core, the range of _μ<sub>c</sub>_, and the Local COVID-19 epidemic population. On this workstation, the optimum _ndarray_ size to operate 28 logical cores is 150x18x55136= 148,867,200 elements.
+
+The generation of pseudo-randomness in the results are by the NumPy Permuted Congruential Generator 64-bit with DXSM (_PCG64DXSM_) class and the NumPy random.SeedSequence class. Also, three unique random seeds had primed the _random.SeedSequence_ class, and thus the _PCG64DXSM_ bit generator, to understand possible variance in their computed results.
+	
 ## 3 Results
 ### 3.1 The Statistical μ Estimates
 ### 3.2 The Estimated μ<sub>mean</sub> Trend
