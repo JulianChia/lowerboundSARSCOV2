@@ -37,7 +37,7 @@ The primary assumptions of the model are:
 1. Local SARS-CoV-2 infections that are presymptomatic, asymptomatic or symptomatic but are undocumented are negligible. Therefore, an empirical Local COVID-19 epidemic trend is a reasonable lower-bound estimate of the Local COVID-19 epidemic trend and is relatable to the lower-bound Local SARS-CoV-2 infection trend that precedes it.
 2. The Local COVID-19 confirmation event always lags behind its Local SARS-Cov-2 infection event. The duration between these two events is called the _COVID-19 confirmation period (CCP)_. It follows the Normal/Gaussian distribution theory. Daily, the _CCP_ probability density function is:
 
-   <img src="https://render.githubusercontent.com/render/math?math={\color{white} \large P(X) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp^{-\frac{(X-\mu)^2}{2\sigma^2}}}">	Eqn(1)
+   <img src="https://render.githubusercontent.com/render/math?math={\color{black} P(X) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp^{-\frac{(X-\mu)^2}{2\sigma^2}}}">	Eqn(1)
 
    Here, _X є (-∞,∞)_ is the random variate of Eqn(1) and denotes the daily _CCP_, _μ_ denotes its daily mean, _σ_ denotes its daily standard deviation, and _π_ denotes the pi constant. _μ_ is not constant over the Local COVID-19 population history, i.e. _μ_ is a function of days.
 
@@ -65,7 +65,7 @@ The procedure developed to estimate _μ_ involves:
 3. Complete this selection procedure upon reaching 300 samples of the _μ_ estimates per day for the Local COVID-19 epidemic population.
 The approximation of the range of _μ<sub>c</sub>_ in step 1 of this procedure is determined using empirical CCP data. Figure 2 illustrates the CCP from a sample of Local COVID-19 cases obtained from [3] and various national news sources. Its cumulative probability-density distribution is Gaussian-like with a mean and standard deviation of 17.531 days and 6.044 days, respectively. Assuming this empirical mean value indicates the maximum range of _μ<sub>c</sub>_ while letting a day be its minimum, then _μ<sub>c</sub>_=[1,18] since the ceiling value of 17.531 days is 18 days. Furthermore, _σ_ is assumed to be a quadratic function of _μ_:
 
-   <img src="https://render.githubusercontent.com/render/math?math={\color{white} \large \sigma = f(\mu) = a\mu^2 + b\mu - c} ">	Eqn(2)
+   <img src="https://render.githubusercontent.com/render/math?math={\color{black} \sigma = f(\mu) = a\mu^2 + b\mu + c} ">             Eqn(2)
 
    where _a_ = -0.008665, _b_ = 0.483888, _c_ = 0.0 and _μ_=_μ<sub>c</sub>_. Figure 2 illustrates the Normal Cumulative Probability Distributions of _μ<sub>c</sub>_=[1,18].
 
