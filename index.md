@@ -37,9 +37,9 @@ The primary assumptions of the model are:
 1. Local SARS-CoV-2 infections that are presymptomatic, asymptomatic or symptomatic but are undocumented are negligible. Therefore, an empirical Local COVID-19 epidemic trend is a reasonable lower-bound estimate of the Local COVID-19 epidemic trend and is relatable to the lower-bound Local SARS-CoV-2 infection trend that precedes it.
 2. The Local COVID-19 confirmation event always lags behind its Local SARS-Cov-2 infection event. The duration between these two events is called the _COVID-19 confirmation period (CCP)_. It follows the Normal/Gaussian distribution theory. Daily, the _CCP_ probability density function is:
 
-         (1)
+   <img src="https://render.githubusercontent.com/render/math?math={\color{white} \large P(X) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp^{-\frac{(X-\mu)^2}{2\sigma^2}}}">	Eqn(1)
 
-   Here, _X є_ (-_∞_,_∞_) is the random variate of Eqn(1) and denotes the daily _CCP_, _μ_ denotes its daily mean, _σ_ denotes its daily standard deviation, and _π_ denotes the pi constant. _μ_ is not constant over the Local COVID-19 population history, i.e. _μ_ is a function of days.
+   Here, _X є (-∞,∞)_ is the random variate of Eqn(1) and denotes the daily _CCP_, _μ_ denotes its daily mean, _σ_ denotes its daily standard deviation, and _π_ denotes the pi constant. _μ_ is not constant over the Local COVID-19 population history, i.e. _μ_ is a function of days.
 
 ### 2.2 Hypothesis
 
@@ -59,16 +59,13 @@ _Forecasting_ similarly is a statistical computation algorithm. But unlike backc
 
 In _backcasting_ and _forecasting_, the profile of the estimated lower-bound Local SARS-CoV-2 infection and COVID-19 epidemic trends rely on the values of the _CCP_, which in turn are a function of _μ_ and _σ_. Empirical data on the _μ_ and _σ_ of Singapore’s Local COVID-19 epidemic trend are unpublished. As such, they have to be estimated.
 
-![Figure 2](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Figure_2_SG_CCP_empirical_%26_model.png?raw=true)
-**Figure 2:** Illustration of the _CCP_ of a sample of Singapore’s Local COVID-19 cases, their cumulative probability distribution, and the Gaussian cumulative probability distribution parameters used to estimate the _μ_ of Singapore’s Local COVID-19 epidemic trend.
-
 The procedure developed to estimate _μ_ involves:
 1. Iteratively perform the backcasting and forecasting algorithms for a range of constant _μ_ scenarios (termed as _μ<sub>c</sub>_).
 2. Select _μ<sub>c</sub>_ as a probable value of _μ_ for a given day when the number of estimated Local COVID-19 confirmation events that day is identical to its empirical data.
 3. Complete this selection procedure upon reaching 300 samples of the _μ_ estimates per day for the Local COVID-19 epidemic population.
 The approximation of the range of _μ<sub>c</sub>_ in step 1 of this procedure is determined using empirical CCP data. Figure 2 illustrates the CCP from a sample of Local COVID-19 cases obtained from [3] and various national news sources. Its cumulative probability-density distribution is Gaussian-like with a mean and standard deviation of 17.531 days and 6.044 days, respectively. Assuming this empirical mean value indicates the maximum range of _μ<sub>c</sub>_ while letting a day be its minimum, then _μ<sub>c</sub>_=[1,18] since the ceiling value of 17.531 days is 18 days. Furthermore, _σ_ is assumed to be a quadratic function of _μ_:
 
-   (2)
+   <img src="https://render.githubusercontent.com/render/math?math={\color{white} \large \sigma = f(\mu) = a\mu^2 + b\mu - c} ">	Eqn(2)
 
    where _a_ = -0.008665, _b_ = 0.483888, _c_ = 0.0 and _μ_=_μ<sub>c</sub>_. Figure 2 illustrates the Normal Cumulative Probability Distributions of _μ<sub>c</sub>_=[1,18].
 
@@ -81,7 +78,10 @@ and its _weighted_ counterpart (_WCAD_) criterion:
    (4)
    
 Here, _T<sub>e</sub>_ and _T<sub>m</sub>_, respectively, denote the estimated and documented daily number of Local COVID-19 cases, _d_ denotes the day, _d<sub>max</sub>_ denotes its maximum, and _p_ denotes the population of the empirical Local COVID-19 epidemic. A complete resemblance occurs when the criterion → 0. The opposite is true when their value → ∞.
-	
+
+![Figure 2](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Figure_2_SG_CCP_empirical_%26_model.png?raw=true)
+**Figure 2:** Illustration of the _CCP_ of a sample of Singapore’s Local COVID-19 cases, their cumulative probability distribution, and the Gaussian cumulative probability distribution parameters used to estimate the _μ_ of Singapore’s Local COVID-19 epidemic trend.
+
 ### 2.4 Computation
 
 The implementation of the methodology is by the Python3 scripting language [21] and optimized libraries such as NumPy [22] and SciPy [23]. The visualization of their results is through Matplotlib [24]. Their source codes are in [25]. All computations are by a workstation installed with an overclocked Intel® Core™ i9-7960X CPU comprising 32 logical cores and 94.0GB of DDR4 RAM.
@@ -94,18 +94,18 @@ The generation of pseudo-randomness in the results are by the NumPy Permuted Con
 
 ### 3.1 The Statistical _μ_ Estimates
 
+Figure 3 shows that the statistical estimation of _μ_ for each random seed took 14 to 15hrs or ~2.48x10<sup>6</sup> iterations to complete ~84.58% of the Local COVID-19 population history of 214 days. This result meant that 181 days of the 214 days achieved the sampling quota of 300 estimates per day. Of the remaining 15.42% (or 33 days of the 214 days) that are incomplete, 6.54-7.48% (or 14-16 days of the 214 days) achieved no estimate of _μ_. Beyond these thresholds, the statistical estimation of _μ_ became unproductive and discontinued. Figure 4 shows the mean of the estimated _μ_, i.e. _μ<sub>mean</sub>_, of each unique random seed. The low variance in these _μ<sub>mean</sub>_ trends indicates that the sampling quota of the _μ_ estimates is sufficiently large.
+
+Figure 5 shows the _μ<sub>mean</sub>_ trend of all the _μ_ estimates combined. ~85.05% of the 214 days (or 182 days) achieved the sample quota of _μ_ while ~14.95% of 214 days (or 32 days) did not. Of which, ~6.07% of the 214 days (or 13 days) had no estimates of _μ_. The completion of the _μ<sub>mean</sub>_ trend via the _Resemblance Algorithm_ is needed and presented in the next section.
+
 ![Figure 3](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Figure_3_%CE%BC_computation.png?raw=true)
 **Figure 3:** Illustration of the duration and iterations to estimate _μ_. “Completed” denotes achieving a sample quota of 300 estimates per day. “Incomplete” denotes not achieving the sample quota. “No Estimate” is a subset of “Incomplete” without an estimation of _μ_.
 
 ![Figure 4](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Figure_4_%CE%BC_estimates.png?raw=true)
 **Figure 4:** The mean of the respective estimates of _μ_ for Random Seeds 1, 2 and 3. μmean=0 denotes no estimate of _μ_.
 
-Figure 3 shows that the statistical estimation of _μ_ for each random seed took 14 to 15hrs or ~2.48x10<sup>6</ sup> iterations to complete ~84.58% of the Local COVID-19 population history of 214 days. This result meant that 181 days of the 214 days achieved the sampling quota of 300 estimates per day. Of the remaining 15.42% (or 33 days of the 214 days) that are incomplete, 6.54-7.48% (or 14-16 days of the 214 days) achieved no estimate of _μ_. Beyond these thresholds, the statistical estimation of _μ_ became unproductive and discontinued. Figure 4 shows the mean of the estimated _μ_, i.e. _μ<sub>mean</sub>_, of each unique random seed. The low variance in these _μ<sub>mean</sub>_ trends indicates that the sampling quota of the _μ_ estimates is sufficiently large.
-
 ![Figure 5](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Figure_5_%CE%BCmean_incomplete.png?raw=true)
 **Figure 5:** The mean of the combined estimates of _μ_ for Random Seeds 1, 2 and 3. _μ<sub>mean</sub>_=0 denotes no estimate of _μ_.
-
-Figure 5 shows the μmean trend of all the _μ_ estimates combined. ~85.05% of the 214 days (or 182 days) achieved the sample quota of _μ_ while ~14.95% of 214 days (or 32 days) did not. Of which, ~6.07% of the 214 days (or 13 days) had no estimates of _μ_. The completion of the _μ<sub>mean</sub>_ trend via the _Resemblance Algorithm_ is needed and presented in the next section.
 
 ### 3.2 The Estimated _μ<sub>mean</sub>_ Trend
 
@@ -115,17 +115,17 @@ The Cartesian product of _μ_=[1,18] for thirteen missing elements of the _μ<su
 3. In each prediction step, the _μ<sub>mean</sub>_ trend of the iteration with the least _CAD_ and _WCAD_ score, respectively, are carried over to the next prediction step. In the final prediction step, the _μ<sub>mean</sub>_ trend with the least _CAD_ and _WCAD_ score, respectively, are selected.
 Consequently, Step0 (the 1<sup>st</sup> prediction step) performs 18<sup>5</sup>x18=1,889,568x18=34,012,224 iterations, Step1 performs 18<sup>5</sup>x2=1,889,568x2= 3,779,136 iterations and Step2 performs 18<sup>3</sup>x2=5,832x2=11,664 iterations, of _backcasting-forecasting_ and _CAD-WCAD_ treatments of their constituted _μ<sub>mean</sub>_ trends. These computations are performed for three unique random seeds to quantify the effects of statistical variances. Therefore in total, 37,803,024×3=113,409,072 iterations of _backcasting-forecasting_ and the _CAD-WCAD_ treatments of their constituted  _μ<sub>mean</sub>_ trends are solved. Figure 6 shows the value assigned to the unselected missing _μ<sub>mean</sub>_ elements via the _CAD_ and _WCAD_ criteria for different Random Seeds from Step0 can be similar and dissimilar. Table 1 evidence small improvement gains in _CAD_ and _WCAD_ step after step of the _Modified Resemblance Algorithm_, the values of _WCAD_ are one order smaller than _CAD_, and Seed2 yielded the least _CAD_ while Seed3 yielded the least _WCAD_.
 
-![Figure 6](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Figure_6_MRA_Step0_leastCAD_leastWCAD_scores.png?raw=true)
-**Figure 6:** The least-_CAD_ and least-_WCAD_ scores obtained in Step 0 of the _Modified Resemblance Algorithm_ for three unique random seeds.
-
-**Table 1:** The least-_CAD) and least-_WCAD_ scores of Steps 0, 1 and 2 for three unique random seeds.
-
 Figure 7 illustrates the  _μ<sub>mean</sub>_ trends of Figure 5 after the _Modified Resemblance Algorithm_ treatment for three Random Seeds. Their 14 days windowed Simple Moving Averages (SMA) show:
 1. Singapore started with the SMA daily _CCP_ of 9 days until ~1<sup>st</sup> March 2020. 
 2. In the next five weeks, i.e. leading into the CB, this duration decreased to 4 days. 
 3. Throughout the CB until 12<sup>th</sup> June 2020, this duration ranged from 4 to 8 days. This variation appears cyclical over a 4 to 5 weeks period.
 4. Over the last 4 to 5 weeks, the SMA daily _CCP_ ranged between 5 to 9 days.
 The 14 days window of the SMA reflects the self-isolation/quarantine period mandated by Singapore's Stay-Home-Notice (SHN) Order [26]. These SMA trends of  _μ<sub>mean</sub>_ evidenced the collective effort by Singapore to quickly confirm COVID-19 (given its SHN) started a month after the confirmation of its 1<sup>st</sup> Local COVID-19 case. This success then became periodic, fluctuating per month, during and post CB.
+
+![Figure 6](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Figure_6_MRA_Step0_leastCAD_leastWCAD_scores.png?raw=true)
+**Figure 6:** The least-_CAD_ and least-_WCAD_ scores obtained in Step 0 of the _Modified Resemblance Algorithm_ for three unique random seeds.
+
+**Table 1:** The least-_CAD) and least-_WCAD_ scores of Steps 0, 1 and 2 for three unique random seeds.
 
 ![Figure 7](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Figure_7_%CE%BCmean_completed.png?raw=true)
 **Figure 7:** The mean of the estimates of _μ_, i.e. _μ<sub>mean</sub>_, for Random Seeds 1, 2 and 3 combined (see Figure 5) completed with the _μ<sub>mean</sub>_ predicted by the _Modified Resemblance Algorithm_. Included is also their 14 days windowed Simple Moving Averages.
