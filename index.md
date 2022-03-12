@@ -88,7 +88,7 @@ The implementation of the methodology is by the Python3 scripting language [21] 
 
 A strategy to achieve high computation efficacy is executing an instance of the _concurrent.futures.ProcessPoolExecutor_ class of Python3 within a nested logical _while_-loop structure. This arrangement provides a continuous-concurrent stream of computation using every available logical core of the CPU.  Also, large three-dimensional instances of the NumPy _ndarray_ class facilitated data parallelism within each CPU logical core. The 1<sup>st</sup>, 2<sup>nd</sup> and 3<sup>rd</sup> dimensions of these ndarrays, respectively, represent the number of iterations performed in each CPU logical-core, the range of _μ<sub>c</sub>_, and the Local COVID-19 epidemic population. On this workstation, the optimum _ndarray_ size to operate 28 logical cores is 150x18x55136= 148,867,200 elements.
 
-The generation of pseudo-randomness in the results are by the NumPy Permuted Congruential Generator 64-bit with DXSM (_PCG64DXSM_) class and the NumPy random.SeedSequence class. Also, three unique random seeds had primed the _random.SeedSequence_ class, and thus the _PCG64DXSM_ bit generator, to understand possible variance in their computed results.
+The generation of pseudo-randomness in the results are by the NumPy Permuted Congruential Generator 64-bit with DXSM (_PCG64DXSM_) class and the NumPy _random.SeedSequence_ class. Also, three unique random seeds had primed the _random.SeedSequence_ class, and thus the _PCG64DXSM_ bit generator, to understand possible variance in their computed results.
 	
 ## 3 Results
 ### 3.1 The Statistical μ Estimates
