@@ -60,10 +60,10 @@ _Forecasting_ similarly is a statistical computation algorithm. But unlike backc
 In _backcasting_ and _forecasting_, the profile of the estimated lower-bound Local SARS-CoV-2 infection and COVID-19 epidemic trends rely on the values of the _CCP_, which in turn are a function of _μ_ and _σ_. Empirical data on the _μ_ and _σ_ of Singapore’s Local COVID-19 epidemic trend are unpublished. As such, they have to be estimated.
 
 The procedure developed to estimate _μ_ involves:
-1. Iteratively perform the backcasting and forecasting algorithms for a range of constant _μ_ scenarios (termed as _μ<sub>c</sub>_).
+1. Iteratively perform the _backcasting_ and _forecasting_ algorithms for a range of constant _μ_ scenarios (termed as _μ<sub>c</sub>_).
 2. Select _μ<sub>c</sub>_ as a probable value of _μ_ for a given day when the number of estimated Local COVID-19 confirmation events that day is identical to its empirical data.
 3. Complete this selection procedure upon reaching 300 samples of the _μ_ estimates per day for the Local COVID-19 epidemic population.
-The approximation of the range of _μ<sub>c</sub>_ in step 1 of this procedure is determined using empirical CCP data. Figure 2 illustrates the CCP from a sample of Local COVID-19 cases obtained from [3] and various national news sources. Its cumulative probability-density distribution is Gaussian-like with a mean and standard deviation of 17.531 days and 6.044 days, respectively. Assuming this empirical mean value indicates the maximum range of _μ<sub>c</sub>_ while letting a day be its minimum, then _μ<sub>c</sub>_=[1,18] since the ceiling value of 17.531 days is 18 days. Furthermore, _σ_ is assumed to be a quadratic function of _μ_:
+The approximation of the range of _μ<sub>c</sub>_ in step 1 of this procedure is determined using empirical _CCP_ data. Figure 2 illustrates the _CCP_ from a sample of Local COVID-19 cases obtained from [3] and various national news sources. Its cumulative probability-density distribution is Gaussian-like with a mean and standard deviation of 17.531 days and 6.044 days, respectively. Assuming this empirical mean value indicates the maximum range of _μ<sub>c</sub>_ while letting a day be its minimum, then _μ<sub>c</sub>_=[1,18] since the ceiling value of 17.531 days is 18 days. Furthermore, _σ_ is assumed to be a quadratic function of _μ_:
 
    <img src="https://render.githubusercontent.com/render/math?math={\color{black} \sigma = f(\mu) = a\mu^2 %2B b\mu %2B c}"> ..........(2)
 
@@ -71,11 +71,11 @@ The approximation of the range of _μ<sub>c</sub>_ in step 1 of this procedure i
 
 The estimation of _μ_ via the abovementioned procedure will, unfortunately, continue indefinitely when one or more elements of _μ_ are unpredictable, i.e. when the element(s) of _μ_ have zero value. In such an eventuality, a _Resemblance Algorithm_ is to complete the estimation of _μ_. Firstly, the Cartesian Product of _μ<sub>c</sub>_=[1,18] replaces the element(s) of _μ_ that has zero value. Doing so allows the exploration of every possible sequencing of _μ<sub>c</sub>_ in these missing _μ_ elements. Next, the backcasting and forecasting of each possible sequencing of these _μ_ estimates the Local COVID-19 epidemic trend. Finally, the sequence of _μ_ that yields the Local COVID-19 epidemic trend that best resembles its empirical counterpart is its _μ_. The measurement of resemblance is via a _cumulative-absolute-difference_ (_CAD_) criterion:
 
-<img src="https://render.githubusercontent.com/render/math?math={\color{black} CAD = \displaystyle\sum_{d=0}^{d_{max}} |{T_e-T_m}|}"> ..........(3)
+<img src="https://render.githubusercontent.com/render/math?math={\color{black} CAD = \displaystyle\sum_{d=0}^{d_{max}} \left|{T_e-T_m}\right|}"> ..........(3)
    
 and its _weighted_ counterpart (_WCAD_) criterion:
 
-<img src="https://render.githubusercontent.com/render/math?math={\color{black} WCAD = \displaystyle\sum_{d=0}^{d_{max}}(\frac{T_e}{p} * |{T_e-T_m}|)}"> ..........(4)
+<img src="https://render.githubusercontent.com/render/math?math={\color{black} WCAD = \displaystyle\sum_{d=0}^{d_{max}} \left( \frac{T_e}{p} * \left|{T_e-T_m} \right| \right)}"> ..........(4)
    
 Here, _T<sub>e</sub>_ and _T<sub>m</sub>_, respectively, denote the estimated and documented daily number of Local COVID-19 cases, _d_ denotes the day, _d<sub>max</sub>_ denotes its maximum, and _p_ denotes the population of the empirical Local COVID-19 epidemic. A complete resemblance occurs when the criterion → 0. The opposite is true when their value → ∞.
 
