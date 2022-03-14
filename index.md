@@ -71,11 +71,11 @@ The approximation of the range of _μ<sub>c</sub>_ in step 1 of this procedure i
 
 The estimation of _μ_ via the abovementioned procedure will, unfortunately, continue indefinitely when one or more elements of _μ_ are unpredictable, i.e. when the element(s) of _μ_ have zero value. In such an eventuality, a _Resemblance Algorithm_ is to complete the estimation of _μ_. Firstly, the Cartesian Product of _μ<sub>c</sub>_=[1,18] replaces the element(s) of _μ_ that has zero value. Doing so allows the exploration of every possible sequencing of _μ<sub>c</sub>_ in these missing _μ_ elements. Next, the backcasting and forecasting of each possible sequencing of these _μ_ estimates the Local COVID-19 epidemic trend. Finally, the sequence of _μ_ that yields the Local COVID-19 epidemic trend that best resembles its empirical counterpart is its _μ_. The measurement of resemblance is via a _cumulative-absolute-difference_ (_CAD_) criterion:
 
-<img src="https://render.githubusercontent.com/render/math?math={\color{black} CAD = \sum_{d=0}^{d_{max}} |{T_e-T_m}|}"> ..........(3)
+<img src="https://render.githubusercontent.com/render/math?math={\color{black} CAD = \displaystyle\sum_{d=0}^{d_{max}} |{T_e-T_m}|}"> ..........(3)
    
 and its _weighted_ counterpart (_WCAD_) criterion:
 
-<img src="https://render.githubusercontent.com/render/math?math={\color{black} WCAD = \sum_{d=0}^{d_{max}}(\frac{T_e}{p} * |{T_e-T_m}|)}"> ..........(4)
+<img src="https://render.githubusercontent.com/render/math?math={\color{black} WCAD = \displaystyle\sum_{d=0}^{d_{max}}(\frac{T_e}{p} * |{T_e-T_m}|)}"> ..........(4)
    
 Here, _T<sub>e</sub>_ and _T<sub>m</sub>_, respectively, denote the estimated and documented daily number of Local COVID-19 cases, _d_ denotes the day, _d<sub>max</sub>_ denotes its maximum, and _p_ denotes the population of the empirical Local COVID-19 epidemic. A complete resemblance occurs when the criterion → 0. The opposite is true when their value → ∞.
 
