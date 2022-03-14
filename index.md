@@ -37,7 +37,7 @@ The primary assumptions of the model are:
 1. Local SARS-CoV-2 infections that are presymptomatic, asymptomatic or symptomatic but are undocumented are negligible. Therefore, an empirical Local COVID-19 epidemic trend is a reasonable lower-bound estimate of the Local COVID-19 epidemic trend and is relatable to the lower-bound Local SARS-CoV-2 infection trend that precedes it.
 2. The Local COVID-19 confirmation event always lags behind its Local SARS-Cov-2 infection event. The duration between these two events is called the _COVID-19 confirmation period (CCP)_. It follows the Normal/Gaussian distribution theory. Daily, the _CCP_ probability density function is:
 
-   <img src="https://render.githubusercontent.com/render/math?math={\color{white} P(X) = \displaystyle\frac{1}{\sqrt{2\pi\sigma^2}} \exp^{-\frac{(X-\mu)^2}{2\sigma^2}}}"> ..........(1)
+   <img src="https://render.githubusercontent.com/render/math?math={\color{black} P(X) = \displaystyle\frac{1}{\sqrt{2\pi\sigma^2}} \exp^{-\frac{(X-\mu)^2}{2\sigma^2}}}"> ..........(1)
 
    Here, _X є (-∞,∞)_ is the random variate of Eqn(1) and denotes the daily _CCP_, _μ_ denotes its daily mean, _σ_ denotes its daily standard deviation, and _π_ denotes the pi constant. _μ_ is not constant over the Local COVID-19 population history, i.e. _μ_ is a function of days.
 
