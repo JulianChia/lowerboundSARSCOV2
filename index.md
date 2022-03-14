@@ -125,12 +125,33 @@ The 14 days window of the SMA reflects the self-isolation/quarantine period mand
 ![Figure 6](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Figure_6_MRA_Step0_leastCAD_leastWCAD_scores.png?raw=true)
 **Figure 6:** The least-_CAD_ and least-_WCAD_ scores obtained in Step 0 of the _Modified Resemblance Algorithm_ for three unique random seeds.
 
-**Table 1:** The least-_CAD) and least-_WCAD_ scores of Steps 0, 1 and 2 for three unique random seeds.
+![Table 1](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Table1_leastCAD_leastWCAD_of_Steps_0_1_2.png?raw=true)
+
+**Table 1:** The least-_CAD_ and least-_WCAD_ scores of Steps 0, 1 and 2 for three unique random seeds.
 
 ![Figure 7](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Figure_7_%CE%BCmean_completed.png?raw=true)
 **Figure 7:** The mean of the estimates of _μ_, i.e. _μ<sub>mean</sub>_, for Random Seeds 1, 2 and 3 combined (see Figure 5) completed with the _μ<sub>mean</sub>_ predicted by the _Modified Resemblance Algorithm_. Included is also their 14 days windowed Simple Moving Averages.
 
 ### 3.3 The Estimated Lower-bound Local COVID-19 Epidemic Trends
+
+The estimated lower-bound Local COVID-19 epidemic trends resembled their empirical counterpart (see Figures 8 and 9). According to Table 2, the _CAD_ scores from these estimated trends are ~21% of the Local COVID-19 population. This result means that these estimated trends predicted or resembled ~79% of the empirical data.
+
+An advantage of the least-_WCAD_ criterion appears to be its ability to capture the peak of the Local COVID-19 epidemic trend (see Table 3). It predicted 1474 peak cases. This amount is closer to the actual 1426 cases than the 1226 cases estimated by the least-_CAD_ criterion. Moreover, it correctly predicted the day of the peak event. The least-_CAD_ criterion predictions were a day or two later.
+
+With the strong resemblances to the empirical Local COVID-19 epidemic trend achieved by the estimated lower-bound Local COVID-19 epidemic trends, credence in the estimated lower-bound Local SARS-CoV-2 trends by the least-_CAD_ and least-_WCAD_ criteria is reasonable and presented next.
+
+![Figure 8](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Figure_8_lowerbound_Local_COVID19_epidemic_trends_leastCAD.png?raw=true)
+**Figure 8:** Comparison of the lower-bound Local COVID-19 epidemic trends estimated by the least-_CAD_ criterion against its empirical counterpart.
+
+![Figure 9](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Figure_9_lowerbound_Local_COVID19_epidemic_trends_leastWCAD.png?raw=true)
+**Figure 9:** Comparison of the lower-bound Local COVID-19 epidemic trends estimated by the least-_WCAD_ criterion against its empirical counterpart.
+
+![Table 2](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Table2_leastCAD_leastWCAD_of_COVID19_epidemic_trends.png?raw=true)
+**Table 2:** The _CAD_ and _WCAD_ scores of the lower-bound Local COVID-19 epidemic trends estimated by the least-_CAD_ and least-_WCAD_ criteria.
+
+![Table 3](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Table3_peak_COVID19_cases_estimated_vs_empirical.png?raw=true)
+**Table 3:** Data on the estimated and empirical peak daily number of confirmed COVID-19 cases.
+
 ### 3.4 The Estimated Lower-bound Local SARS-CoV-2 Infection Trends
 ## 4 Discussions
 ## 5 Conculsions
