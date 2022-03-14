@@ -110,8 +110,8 @@ Figure 5 shows the _μ<sub>mean</sub>_ trend of all the _μ_ estimates combined.
 ### 3.2 The Estimated _μ<sub>mean</sub>_ Trend
 
 The Cartesian product of _μ_=[1,18] for thirteen missing elements of the _μ<sub>mean</sub>_ trend in Figure 5 is needed. Accordingly, 18<sup>13</sup>=2.082296487×10¹⁶ possible sequencing of these missing μmean elements, as well as the _backcasting-forecasting_ and the _CAD-WCAD_ treatments of their constituted μmean trends, needs computing. The completion of this Big-O time complexity is too computationally intensive to achieve on a workstation. Addressing this issue requires a reduction of the problem size. To this end, the following _Modified Resemblance Algorithm_ is implemented:
-1. The Cartesian product of _μ_=[1,18] shall not exceed five missing μmean elements for each computation. This decision discretizes the computation problem into three reasonably sized prediction steps (since 13days//5days=3 and 18<sup>5</sup>=1,889,568 iterations of the _backcasting-forecasting_ and the _CAD-WCAD_ treatments of their constituted _μ<sub>mean</sub>_ trends takes an hour or two to complete). The selection of these five missing _μ<sub>mean</sub>_ elements is according to whether they have the five highest empirical Local COVID-19 case counts and thus reordered. This reordering is performed on the three missing _μ<sub>mean</sub>_ elements of the last prediction step too.
-2. In the 1st prediction step, the values of the eight missing μmean elements that are not selected are made constant for every possible scenario of _μ<sub>c</sub>_=[1,18]. In subsequent prediction steps, the _μ<sub>mean</sub>_ values from the iteration with the least _CAD_ and _WCAD_ scores in its previous prediction step replaces the unselected missing _μ_ elements.
+1. The Cartesian product of _μ_=[1,18] shall not exceed five missing _μ<sub>mean</sub>_ elements for each computation. This decision discretizes the computation problem into three reasonably sized prediction steps (since 13days//5days=3 and 18<sup>5</sup>=1,889,568 iterations of the _backcasting-forecasting_ and the _CAD-WCAD_ treatments of their constituted _μ<sub>mean</sub>_ trends takes an hour or two to complete). The selection of these five missing _μ<sub>mean</sub>_ elements is according to whether they have the five highest empirical Local COVID-19 case counts and thus reordered. This reordering is performed on the three missing _μ<sub>mean</sub>_ elements of the last prediction step too.
+2. In the 1st prediction step, the values of the eight missing _μ<sub>mean</sub>_ elements that are not selected are made constant for every possible scenario of _μ<sub>c</sub>_=[1,18]. In subsequent prediction steps, the _μ<sub>mean</sub>_ values from the iteration with the least _CAD_ and _WCAD_ scores in its previous prediction step replaces the unselected missing _μ_ elements.
 3. In each prediction step, the _μ<sub>mean</sub>_ trend of the iteration with the least _CAD_ and _WCAD_ score, respectively, are carried over to the next prediction step. In the final prediction step, the _μ<sub>mean</sub>_ trend with the least _CAD_ and _WCAD_ score, respectively, are selected.
 Consequently, Step0 (the 1<sup>st</sup> prediction step) performs 18<sup>5</sup>x18=1,889,568x18=34,012,224 iterations, Step1 performs 18<sup>5</sup>x2=1,889,568x2= 3,779,136 iterations and Step2 performs 18<sup>3</sup>x2=5,832x2=11,664 iterations, of _backcasting-forecasting_ and _CAD-WCAD_ treatments of their constituted _μ<sub>mean</sub>_ trends. These computations are performed for three unique random seeds to quantify the effects of statistical variances. Therefore in total, 37,803,024×3=113,409,072 iterations of _backcasting-forecasting_ and the _CAD-WCAD_ treatments of their constituted  _μ<sub>mean</sub>_ trends are solved. Figure 6 shows the value assigned to the unselected missing _μ<sub>mean</sub>_ elements via the _CAD_ and _WCAD_ criteria for different Random Seeds from Step0 can be similar and dissimilar. Table 1 evidence small improvement gains in _CAD_ and _WCAD_ step after step of the _Modified Resemblance Algorithm_, the values of _WCAD_ are one order smaller than _CAD_, and Seed2 yielded the least _CAD_ while Seed3 yielded the least _WCAD_.
 
@@ -123,11 +123,11 @@ Figure 7 illustrates the  _μ<sub>mean</sub>_ trends of Figure 5 after the _Modi
 The 14 days window of the SMA reflects the self-isolation/quarantine period mandated by Singapore's Stay-Home-Notice (SHN) Order [26]. These SMA trends of  _μ<sub>mean</sub>_ evidenced the collective effort by Singapore to quickly confirm COVID-19 (given its SHN) started a month after the confirmation of its 1<sup>st</sup> Local COVID-19 case. This success then became periodic, fluctuating per month, during and post CB.
 
 ![Figure 6](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Figure_6_MRA_Step0_leastCAD_leastWCAD_scores.png?raw=true)
-**Figure 6:** The least-_CAD_ and least-_WCAD_ scores obtained in Step 0 of the _Modified Resemblance Algorithm_ for three unique random seeds.
+**Figure 6:** The _least-CAD_ and _least-WCAD_ scores obtained in Step 0 of the _Modified Resemblance Algorithm_ for three unique random seeds.
 
 ![Table 1](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Table1_leastCAD_leastWCAD_of_Steps_0_1_2.png?raw=true)
 
-**Table 1:** The least-_CAD_ and least-_WCAD_ scores of Steps 0, 1 and 2 for three unique random seeds.
+**Table 1:** The _least-CAD_ and _least-WCAD_ scores of Steps 0, 1 and 2 for three unique random seeds.
 
 ![Figure 7](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Figure_7_%CE%BCmean_completed.png?raw=true)
 **Figure 7:** The mean of the estimates of _μ_, i.e. _μ<sub>mean</sub>_, for Random Seeds 1, 2 and 3 combined (see Figure 5) completed with the _μ<sub>mean</sub>_ predicted by the _Modified Resemblance Algorithm_. Included is also their 14 days windowed Simple Moving Averages.
@@ -136,18 +136,18 @@ The 14 days window of the SMA reflects the self-isolation/quarantine period mand
 
 The estimated lower-bound Local COVID-19 epidemic trends resembled their empirical counterpart (see Figures 8 and 9). According to Table 2, the _CAD_ scores from these estimated trends are ~21% of the Local COVID-19 population. This result means that these estimated trends predicted or resembled ~79% of the empirical data.
 
-An advantage of the least-_WCAD_ criterion appears to be its ability to capture the peak of the Local COVID-19 epidemic trend (see Table 3). It predicted 1474 peak cases. This amount is closer to the actual 1426 cases than the 1226 cases estimated by the least-_CAD_ criterion. Moreover, it correctly predicted the day of the peak event. The least-_CAD_ criterion predictions were a day or two later.
+An advantage of the _least-WCAD_ criterion appears to be its ability to capture the peak of the Local COVID-19 epidemic trend (see Table 3). It predicted 1474 peak cases. This amount is closer to the actual 1426 cases than the 1226 cases estimated by the _least-CAD_ criterion. Moreover, it correctly predicted the day of the peak event. The _least-CAD_ criterion predictions were a day or two later.
 
-With the strong resemblances to the empirical Local COVID-19 epidemic trend achieved by the estimated lower-bound Local COVID-19 epidemic trends, credence in the estimated lower-bound Local SARS-CoV-2 trends by the least-_CAD_ and least-_WCAD_ criteria is reasonable and presented next.
+With the strong resemblances to the empirical Local COVID-19 epidemic trend achieved by the estimated lower-bound Local COVID-19 epidemic trends, credence in the estimated lower-bound Local SARS-CoV-2 trends by the _least-CAD_ and _least-WCAD_ criteria is reasonable and presented next.
 
 ![Figure 8](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Figure_8_lowerbound_Local_COVID19_epidemic_trends_leastCAD.png?raw=true)
-**Figure 8:** Comparison of the lower-bound Local COVID-19 epidemic trends estimated by the least-_CAD_ criterion against its empirical counterpart.
+**Figure 8:** Comparison of the lower-bound Local COVID-19 epidemic trends estimated by the _least-CAD_ criterion against its empirical counterpart.
 
 ![Figure 9](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Figure_9_lowerbound_Local_COVID19_epidemic_trends_leastWCAD.png?raw=true)
-**Figure 9:** Comparison of the lower-bound Local COVID-19 epidemic trends estimated by the least-_WCAD_ criterion against its empirical counterpart.
+**Figure 9:** Comparison of the lower-bound Local COVID-19 epidemic trends estimated by the _least-WCAD_ criterion against its empirical counterpart.
 
 ![Table 2](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Table2_leastCAD_leastWCAD_of_COVID19_epidemic_trends.png?raw=true)
-**Table 2:** The _CAD_ and _WCAD_ scores of the lower-bound Local COVID-19 epidemic trends estimated by the least-_CAD_ and least-_WCAD_ criteria.
+**Table 2:** The _CAD_ and _WCAD_ scores of the lower-bound Local COVID-19 epidemic trends estimated by the _least-CAD_ and _least-WCAD_ criteria.
 
 ![Table 3](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/1_Figures/Table3_peak_COVID19_cases_estimated_vs_empirical.png?raw=true)
 **Table 3:** Data on the estimated and empirical peak daily number of confirmed COVID-19 cases.
