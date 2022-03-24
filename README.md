@@ -1,15 +1,31 @@
-# Singapore’s SARS-CoV-2 Infection Trend In 2020: A Lower Bound Estimate
-_In remembrance of the 2<sup>nd</sup> Anniversary of Singapore's COVID-19 epidemic._
-## Abstract
-Severe Acute Respiratory Syndrome Coronavirus 2 (SARS-CoV-2) infection causes Coronavirus Disease 2019 (COVID-19). Knowledge on the SARS-CoV-2 infection trend is, however, lacking. This viral infection is invisible to the naked eye and is challenging to profile in real-time. Its closest indication is its documented COVID-19 epidemic trend. Fortunately, that is published daily and globally due to the pandemic situation of COVID-19. Leveraging the empirical nature and availability of these COVID-19 epidemic trends, this paper posits that these trends are, in fact, lower-bound estimates of the respective localities COVID-19 epidemic situation, and each is interrelated to the lower-bound SARS-CoV-2 infection trend in their locality. A model based on this posit is developed and applied to Singapore. The predicted Local SARS-CoV-2 infection trends provided a novel reference to understanding the Singapore COVID-19 epidemic that was previously not possible. They evidenced the window of opportunity where Singapore could have mitigated its COVID-19 epidemic via its Circuit Breaker (CB) that it had missed. They evidenced Singapore's additional tighter CB measures and extended CB dateline, both implemented during the CB on 21<sup>st</sup> April 2020, were timely and effective. They derived the population of imminent COVID-19 individuals that the empirical Local COVID-19 epidemic trend had undocumented daily. These undocumented populations are sizable and a possible factor for the COVID-19 epidemic and its protracted recovery. Finally, these SARS-CoV-2 trends provided circumstantial evidence that Singapore's COVID-19 epidemic originated from COVID-19 cases imported into Singapore.
+![Title](1_Figures/title.png)
 
 ## Content:
 This repository contains its:
 - manuscript in pdf format
 - manuscript's figures
-- proposed model source codes that are written in Python3.
-- source codes to plot the manuscript figures and tables.
+- proposed model source codes that are written in Python3, NumPy and SciPy.
+- source codes (Python3 & Matplotlib) to plot the manuscript figures and tables.
 - empirical data on SG's Imported and Local COVID-19 epidemic trends from 23<sup>rd</sup> January to 18<sup>th</sup> August 2020 and COVID19 Confirmed Cases Info till 27<sup>th</sup> May 2020.
 
 ## Dependencies
 Execution of this respositry's source code requires your system to have _Python3_, _NumPy_, _SciPy_ and _Matplotlib_ installed.
+
+## Motivation
+The outset of the COVID-19 epidemic in Singapore in 2020 is a monumental milestone. It revolutionised lifestyle and business practices; worldviews changed. To mitigate COVID-19 and help Singapore weather uncertainties, Singapore spent a portion of its national reserve and GDP. Personally, these events motivated me to understand how COVID-19 became an epidemic in Singapore.
+
+## Summary
+One of my early realisations is that Singapore's health authorities rely on late-stage disease situational information to report Singapore's COVID-19 population. The national daily COVID-19 epidemic trends, although insightful, do not describe the viral/epidemic situation in "real-time". Instead, a national daily SARS-CoV-2 infection trend is needed. But, how can it be obtained?
+
+Towards this end, I developed a model to "extract" lower-bound estimates of Singapore's daily SARS-CoV-2 infection trend from its daily COVID-19 epidemic trend and a few statistical parameters from the confirmation period of a sample of its COVID-19 cases. Its results show the model works. 
+
+Furthermore, my research found that:
+
+1. Singapore had an early window of opportunity to mitigate its COVID-19 epidemic with its Circuit Breaker, but it was unseized. An extended Circuit Breaker with tighter mitigation measures to quell Singapore's COVID-19 epidemic then needed implementation even having reduced its period to confirm COVID-19 cases.
+
+2. Many people with SARS-CoV-2 who ultimately had COVID-19 remained unidentified until a later point in time. I believe this factor is one of the reasons for the epidemic nature of COVID-19 in Singapore and its protracted recovery.
+
+3. The influx of Imported COVID-19 individuals in March 2020 caused Singapore's COVID-19 epidemic
+
+## Research Manuscript
+It is available in both [pdf](https://github.com/JulianChia/lowerboundSARSCOV2/blob/main/Singapore%E2%80%99s%20SARS-CoV-2%20Infection%20Trend%20In%202020:%20A%20Lower%20Bound%20Estimate.pdf) and [html](https://julianchia.github.io/lowerboundSARSCOV2/) formats.
