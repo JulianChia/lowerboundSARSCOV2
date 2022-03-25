@@ -1,7 +1,3 @@
-# Singapore’s SARS-CoV-2 Infection Trend In 2020: A Lower Bound Estimate
-
-By Julian Chia, 1<sup>st</sup> March 2022
-
 _In remembrance of the 2<sup>nd</sup> Anniversary of Singapore's COVID-19 epidemic._
 
 ## Abstract
