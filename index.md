@@ -1,5 +1,16 @@
 _In remembrance of the 2<sup>nd</sup> Anniversary of Singapore's COVID-19 epidemic._
 
+## Summary
+1. A model to "extract" lower-bound estimates of Singapore's daily SARS-CoV-2 infection trend from its daily COVID-19 epidemic trend and a few statistical parameters from the confirmation period of a sample of its COVID-19 cases is successfully demonstrated.
+
+2. Key findings:
+
+   1. Singapore had an early window of opportunity to mitigate its COVID-19 epidemic with its Circuit Breaker, but it was unseized. An extended Circuit Breaker with tighter mitigation measures to quell Singapore's COVID-19 epidemic then needed implementation even having reduced its period to confirm COVID-19 cases.
+
+   2. Many people with SARS-CoV-2 who ultimately had COVID-19 remained unidentified until a later point in time. I believe this factor is one of the reasons for the epidemic nature of COVID-19 in Singapore and its protracted recovery.
+
+   3. The influx of Imported COVID-19 individuals in March 2020 caused Singapore's COVID-19 epidemic
+
 ## Abstract
 Severe Acute Respiratory Syndrome Coronavirus 2 (SARS-CoV-2) infection causes Coronavirus Disease 2019 (COVID-19). Knowledge on the SARS-CoV-2 infection trend is, however, lacking. This viral infection is invisible to the naked eye and is challenging to profile in real-time. Its closest indication is its documented COVID-19 epidemic trend. Fortunately, that is published daily and globally due to the pandemic situation of COVID-19. Leveraging the empirical nature and availability of these COVID-19 epidemic trends, this paper posits that these trends are, in fact, lower-bound estimates of the respective localities COVID-19 epidemic situation, and each is interrelated to the lower-bound SARS-CoV-2 infection trend in their locality. A model based on this posit is developed and applied to Singapore. The predicted Local SARS-CoV-2 infection trends provided a novel reference to understanding the Singapore COVID-19 epidemic that was previously not possible. They evidenced the window of opportunity where Singapore could have mitigated its COVID-19 epidemic via its Circuit Breaker (CB) that it had missed. They evidenced Singapore's additional tighter CB measures and extended CB dateline, both implemented during the CB on 21<sup>st</sup> April 2020, were timely and effective. They derived the population of imminent COVID-19 individuals that the empirical Local COVID-19 epidemic trend had undocumented daily. These undocumented populations are sizable and a possible factor for the COVID-19 epidemic and its protracted recovery. Finally, these SARS-CoV-2 trends provided circumstantial evidence that Singapore's COVID-19 epidemic originated from COVID-19 cases imported into Singapore.
 
