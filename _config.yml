@@ -3,7 +3,7 @@ remote_theme: JulianChia/lowerboundSARSCOV2.github.io
 
 title:
 description:
-show_downloads: false
+show_downloads: false 
 google_analytics:
 email: julianchiayh@gmail.com
 url: "https://github.com/JulianChia/lowerboundSARSCOV2.github.io"
