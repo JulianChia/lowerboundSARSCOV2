@@ -248,3 +248,5 @@ A novel approach to estimate the lower-bound Local SARS-CoV-2 infection trend of
 29. Cucinotta D, Vanelli M. WHO Declares COVID-19 a Pandemic. Acta Biomed. 2020 Mar 19;91(1):157-160. doi: 10.23750/abm.v91i1.9397. PMID: 32191675; PMCID: PMC7569573. [https://pubmed.ncbi.nlm.nih.gov/32191675/](https://pubmed.ncbi.nlm.nih.gov/32191675/)
 30. In Parliament: Lawrence Wong on ‘critical phase’ of COVID-19 fight as Singaporeans return home. 25th Mar 2020. [https://www.youtube.com/watch?v=\_-3u63Ve-C4](https://www.youtube.com/watch?v=_-3u63Ve-C4)
 
+## Terms & Conditions
+<font size="1">THIS DOCUMENT IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHOR(S) OR COPYRIGHT HOLDER(S) BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THIS DOCUMENT OR THE USE OR OTHER DEALINGS WITH THIS DOCUMENT.</font>
