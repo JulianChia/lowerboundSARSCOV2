@@ -2,9 +2,9 @@
 layout: default
 ---
 
-**By Julian Chia, 1<sup>st</sup> March 2022**
-
-_In remembrance of the 2<sup>nd</sup> Anniversary of Singapore's COVID-19 epidemic._
+<p style="text-align: center; font-style: bold;">By Julian Chia, Ph.D., 1<sup>st</sup> March 2022</p>
+<p style="text-align: center; font-style: italic; font-size: 0.8em;">
+In remembrance of the 2<sup>nd</sup> Anniversary of Singapore's COVID-19 epidemic.</p>
 
 ## Summary
 1. A model to "extract" lower-bound estimates of Singapore's daily SARS-CoV-2 infection trend from its daily COVID-19 epidemic trend and a few statistical parameters from the confirmation period of a sample of its COVID-19 cases is successfully demonstrated.
